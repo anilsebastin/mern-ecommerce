@@ -1,3 +1,4 @@
+import CartPage from "./pages/CartPage";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
@@ -11,11 +12,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <LoginPage></LoginPage>,
+    element: <LoginPage />,
   },
   {
     path: "/signup",
-    element: <SignupPage></SignupPage>,
+    element: <SignupPage />,
+  },
+  {
+    path: "/cart",
+    element: <CartPage />,
   },
 ]);
 
