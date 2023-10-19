@@ -2882,6 +2882,70 @@
       },
       "status": "pending",
       "id": 7
+    },
+    {
+      "items": [
+        {
+          "title": "iPhone 9",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 993,
+          "discountPercentage": 12.96,
+          "rating": 0,
+          "stock": 0,
+          "brand": "Apple",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/1/1.jpg",
+            "https://i.dummyjson.com/data/products/1/2.jpg",
+            "https://i.dummyjson.com/data/products/1/3.jpg",
+            "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+          ],
+          "deleted": true,
+          "quantity": 1,
+          "user": 4,
+          "id": 1
+        }
+      ],
+      "totalAmount": 993,
+      "totalItems": 1,
+      "user": {
+        "email": "anil@email.com",
+        "password": "AnilSebastin123",
+        "id": 4,
+        "addresses": [
+          {
+            "name": "Anil Sebastin",
+            "email": "anilsebastin123@gmail.com",
+            "city": "Bangalore",
+            "state": "Karnataka",
+            "pinCode": "560091",
+            "phone": "9886789306",
+            "street": "12th Main, 8th Cross, 2nd Phase, BEL Layout"
+          },
+          {
+            "name": "Ruth Sebastin",
+            "email": "ruth@gmail.com",
+            "phone": "9886789123",
+            "street": "12th Main, 8th Cross, 2nd Phase, BEL Layout",
+            "city": "Bangalore",
+            "state": "Karnataka",
+            "pinCode": "560091"
+          }
+        ]
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Anil Sebastin",
+        "email": "anilsebastin123@gmail.com",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "pinCode": "560091",
+        "phone": "9886789306",
+        "street": "12th Main, 8th Cross, 2nd Phase, BEL Layout"
+      },
+      "status": "pending",
+      "id": 8
     }
   ]
 }

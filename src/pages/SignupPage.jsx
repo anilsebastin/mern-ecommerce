@@ -1,10 +1,10 @@
 import React from "react";
-import Singup from "../features/auth/components/Singup";
+import Signup from "../features/auth/components/Signup";
 
 function SignupPage() {
   return (
     <div>
-      <Singup />
+      <Signup />
     </div>
   );
 }
