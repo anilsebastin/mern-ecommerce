@@ -13,6 +13,7 @@ import { selectLoggedInUser } from "./features/auth/authSlice";
 import { useEffect } from "react";
 import PageNotFound from "./pages/404";
 import OrderSuccessPage from "./pages/OrderSuccessPage";
+import UserOrdersPage from "./pages/UserOrdersPage";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: "/order-success/:id",
     element: <OrderSuccessPage />,
+  },
+  {
+    path: "/orders",
+    element: <UserOrdersPage />,
   },
 ]);
 
