@@ -13,54 +13,10 @@ import {
   selectLoggedInUser,
   updateUserAsync,
 } from "../features/auth/authSlice";
-import { createOrderAsync } from "../features/order/orderSlice";
-
-const temp_products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "$90.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "$32.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-  // More products...
-];
-
-const addresses = [
-  {
-    name: "Anmol John",
-    street: "1st Main, 5th Cross ",
-    city: "New Delhi",
-    pinCode: 110001,
-    state: "Delhi",
-    phone: 9886789098,
-  },
-  {
-    name: "Ashish Abraham",
-    street: "12th Main, 8th Cross ",
-    city: "Bangalore",
-    pinCode: 560091,
-    state: "Karnataka",
-    phone: 9886789123,
-  },
-];
+import {
+  createOrderAsync,
+  selectCurrentOrder,
+} from "../features/order/orderSlice";
 
 export default function Checkout() {
   const dispatch = useDispatch();
@@ -73,6 +29,8 @@ export default function Checkout() {
 
   const user = useSelector(selectLoggedInUser);
   const items = useSelector(selectItems);
+  const currentOrder = useSelector(selectCurrentOrder);
+
   const totalAmount = items.reduce(
     (amount, item) => item.price * item.quantity + amount,
     0
@@ -108,6 +66,7 @@ export default function Checkout() {
       user,
       paymentMethod,
       selectedAddress,
+      status: "pending", // other status can be delivered, received.
     };
     dispatch(createOrderAsync(order));
     //TODO : Redirect to order-success page
@@ -118,6 +77,9 @@ export default function Checkout() {
   return (
     <>
       {!items.length && <Navigate to="/" replace={true} />}
+      {currentOrder && (
+        <Navigate to={`/order-success/${currentOrder.id}`} replace={true} />
+      )}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
           <div className="lg:col-span-3">
