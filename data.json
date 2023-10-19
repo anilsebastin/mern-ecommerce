@@ -1856,6 +1856,25 @@
         "https://i.dummyjson.com/data/products/6/thumbnail.png"
       ],
       "id": 101
+    },
+    {
+      "title": "Coolest Laptop updated",
+      "description": "Coolest Laptop content goes here, Coolest Laptop content goes here, Coolest Laptop content goes here, Coolest Laptop content goes here,  updated",
+      "brand": "Apple",
+      "category": "laptops",
+      "price": 1000,
+      "discountPercentage": 10,
+      "stock": 10,
+      "thumbnail": "https://e7.pngegg.com/pngimages/543/280/png-clipart-laptop-free-content-scalable-graphics-notebook-s-netbook-computer-thumbnail.png",
+      "images": [
+        "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/g-series/g16-7630/pdp/laptop-g16-7630-intel-pdp-hero.psd?qlt=95&fit=constrain,1&hei=400&wid=570&fmt=png-alpha",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz-ly-o8uKkBY-Tfwpu5hZA_xyU3Ve4ryUp6pbAtsIEHqV93JZK9TxOtyC6l_9y5Op610&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMo9eNUx4WB_rBy3dkO_TuDETs7ViyGP9XmcJ9_bU5wS2Hu946Wb5X2N6lBmfEv99_4uc&usqp=CAU",
+        "https://e7.pngegg.com/pngimages/543/280/png-clipart-laptop-free-content-scalable-graphics-notebook-s-netbook-computer-thumbnail.png"
+      ],
+      "rating": 0,
+      "id": 102,
+      "deleted": true
     }
   ],
   "brands": [
@@ -2366,15 +2385,6 @@
           "city": "Banaglore",
           "state": "Karnataka",
           "pinCode": "560034"
-        },
-        {
-          "name": "Jack Morris",
-          "email": "jack@gmail.com",
-          "city": "Delhi",
-          "state": "Delhi",
-          "pinCode": "110006",
-          "phone": "12312331232",
-          "street": "12th cross"
         }
       ],
       "id": 1
@@ -2398,14 +2408,15 @@
     },
     {
       "email": "admin@gmail.com",
-      "password": "Qwerty123",
+      "password": "admin123",
       "addresses": [],
       "role": "admin",
       "id": 3
     },
     {
-      "email": "anil@email.com",
-      "password": "AnilSebastin123",
+      "email": "anil@gmail.com",
+      "password": "anil123",
+      "role": "user",
       "id": 4,
       "addresses": [
         {
