@@ -9,6 +9,7 @@ import {
   fetchProductsByFiltersAsync,
   fetchBrandsAsync,
   fetchCategoriesAsync,
+  selectProductListStatus,
 } from "../productSlice";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
@@ -24,6 +25,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 import { ITEMS_PER_PAGE } from "../../../app/constants";
 import Pagination from "../../common/Pagination";
+import { Grid } from "react-loader-spinner";
 
 const sortOptions = [
   { name: "Best Rating", sort: "rating", order: "desc", current: false },
@@ -212,6 +214,8 @@ export default function ProductList() {
   const brands = useSelector(selectBrands);
   const categories = useSelector(selectCategories);
 
+  const productLoadingStatus = useSelector(selectProductListStatus);
+
   const filters = [
     {
       id: "category",
@@ -356,7 +360,10 @@ export default function ProductList() {
               <DesktopFilter handleFilter={handleFilter} filters={filters} />
 
               {/* Product grid */}
-              <ProductGrid products={products} />
+              <ProductGrid
+                products={products}
+                productLoadingStatus={productLoadingStatus}
+              />
             </div>
           </section>
 
@@ -628,9 +635,21 @@ function DesktopFilter({ handleFilter, filters }) {
 //   );
 // }
 
-function ProductGrid({ products }) {
+function ProductGrid({ products, productLoadingStatus }) {
   return (
     <div className="lg:col-span-3">
+      {productLoadingStatus === "loading" ? (
+        <Grid
+          height="80"
+          width="80"
+          color="rgb(79, 70, 229) "
+          ariaLabel="grid-loading"
+          radius="12.5"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+      ) : null}
       <div>
         <div className="bg-white">
           <div className="mx-auto max-w-2xl px-4 py-0 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">

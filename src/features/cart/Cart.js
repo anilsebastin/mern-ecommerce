@@ -6,10 +6,12 @@ import {
   updateCartAsync,
   deleteItemFromCartAsync,
 } from "./cartSlice";
+import Modal from "../common/Modal";
 
 export default function Cart() {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(true);
+  const [openModal, setOpenModal] = useState(null);
 
   const items = useSelector(selectItems);
 
@@ -78,8 +80,19 @@ export default function Cart() {
                       </div>
 
                       <div className="flex">
+                        <Modal
+                          title={`Delete ${item.title}`}
+                          message="Are you sure you want to delete this Cart item ?"
+                          dangerOption="Delete"
+                          cancelOption="Cancel"
+                          dangerAction={(e) => handleRemove(e, item.id)}
+                          cancelAction={() => setOpenModal(null)}
+                          showModal={openModal === item.id}
+                        ></Modal>
                         <button
-                          onClick={(e) => handleRemove(e, item.id)}
+                          onClick={(e) => {
+                            setOpenModal(item.id);
+                          }}
                           type="button"
                           className="font-medium text-indigo-600 hover:text-indigo-500"
                         >

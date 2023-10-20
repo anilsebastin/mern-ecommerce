@@ -6,6 +6,7 @@ import { fetchAllProductByIdAsync, selectProductById } from "../productSlice";
 import { useParams } from "react-router-dom";
 import { addToCartAsync, selectItems } from "../../cart/cartSlice";
 import { selectLoggedInUser } from "../../auth/authSlice";
+import { useAlert } from "react-alert";
 
 // TODO: In server data we will add colors, sizes , highlights. to each product
 
@@ -46,6 +47,7 @@ export default function ProductDetail() {
   const product = useSelector(selectProductById);
   const dispatch = useDispatch();
   const params = useParams();
+  const alert = useAlert();
 
   useEffect(() => {
     dispatch(fetchAllProductByIdAsync(params.id));
@@ -64,9 +66,9 @@ export default function ProductDetail() {
       delete newItem["id"];
       dispatch(addToCartAsync(newItem));
       // TODO: it will be based on server response of backend
-      console.log("Item added to Cart");
+      alert.success("Item added to Cart");
     } else {
-      console.log("Item Already added");
+      alert.info("Item already added to cart");
     }
   };
 
