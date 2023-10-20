@@ -2440,7 +2440,28 @@
       ]
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "title": "Huawei P30",
+      "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+      "price": 499,
+      "discountPercentage": 10.58,
+      "rating": 4.09,
+      "stock": 32,
+      "brand": "Huawei",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/5/1.jpg",
+        "https://i.dummyjson.com/data/products/5/2.jpg",
+        "https://i.dummyjson.com/data/products/5/3.jpg"
+      ],
+      "productId": 5,
+      "quantity": 1,
+      "user": 4,
+      "id": 1
+    }
+  ],
   "orders": [
     {
       "items": [
@@ -2524,7 +2545,7 @@
         "state": "Karnataka",
         "pinCode": "560091"
       },
-      "status": "pending",
+      "status": "dispatched",
       "id": 1
     },
     {
@@ -2644,7 +2665,7 @@
         "state": "Maharastra",
         "pinCode": "220001"
       },
-      "status": "pending",
+      "status": "cancelled",
       "id": 3
     },
     {
